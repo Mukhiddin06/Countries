@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Countrys</title>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="py-5 shadow-lg bg-white flex items-center justify-between px-6">
+        <h1 class="text-[20px] font-bold uppercase text-white bg-orange-700 px-[15px] py-[5px] rounded-[20px]">Coutrys List</h1>
+        <div class="flex items-center gap-5">
+            <button onclick="handleLikeCountBtnClick()" class="w-[50px] h-[50px] flex items-center justify-center text-[16px] rounded-[50%] border-[1px] border-black">
+                <img src="./Images/heart.svg" alt="Like" width="20" height="20">
+                <span class="like-count">(0)</span>
+            </button>
+            <button onclick="handleSaveCountBtnClick()" class="w-[50px] h-[50px] flex items-center justify-center text-[16px] rounded-[50%] border-[1px] border-black">
+                <img src="./Images/save.svg" alt="Save" width="20" height="20">
+                <span class="save-count">(0)</span>
+            </button>
+            <button class="w-[50px] h-[50px] flex items-center text-[16px] rounded-[50%] border-[1px] border-black">
+                <img class="m-auto" src="./Images/moon.svg" alt="Mode" width="20" height="20">
+            </button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="p-5 flex items-center justify-between">
+                <input class="search-input w-[200px] p-1 rounded-[5px] border-[2px] border-black" type="text">
+                <select class="country-select w-[200px] p-1 rounded-[5px] border-[2px] border-black">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <ul class="country-list flex flex-wrap justify-between gap-5 m-5">
+
+            </ul>
+        </section>
+    </main>
+
+    <div id="wrapper" class="modal-wrapper fixed top-0 bottom-0 left-0 right-0 backdrop-blur duration-300 scale-0">
+        <div class="modal-inner absolute w-[650px] h-[400px] bg-slate-300 top-0 bottom-0 left-0 right-0 m-auto shadow-lg rounded-lg">
+            <button onclick="closeBtnClick()" class="absolute top-0 right-0">
+                <img src="./Images/close.svg" alt="close" width="40" height="40">
+            </button>
+            <div class="modal-content"></div>
+        </div>
+    </div>
+    
+    <script src="./JS/main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+    </script>
+
+</body>
+</html>
